@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Assets/Styles/main.css">
     <title>Bfrp-Formulario de Vistoria</title>
 </head>
 
@@ -18,17 +19,16 @@
             <p> Data:_____/_____/_____</p>
             <p> Nº Folha:_______________</p>
         </header>
-        <h1 class="text-dark text-center">Seção de ligação</h1>
+        <h1 class="text-dark text-center mb-3">Seção de ligação</h1>
         <!-- Quem realizou a vistoria -->
         <section>
             <div class="text-center mt-2">
                 <label for="nome" class="ml-5">Nº Processo:</label>
-                <input type="text" style="width: 100px;">
-                <br>
+                <input type="text">
                 <label for="nome" class="ml-5">Ano do Processo:</label>
-                <select>
+                <select class="custom-select w-25 mb-1">
                     <optgroup>
-                        <option value="default"></option>
+                        <option value="default" selected>Selecione uma opção</option>
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -41,28 +41,29 @@
                     </optgroup>
                 </select>
             </div>
-
-            <h3 class="text-dark text-center">Realizada por:</h3>
-            <select class="form-control">
-                <option value="default"></option>
-                <option value="AUGUSTO">AUGUSTO</option>
-                <option value="BRUNO">BRUNO</option>
-                <option value="DIEGO">DIEGO</option>
-                <option value="HELIO">HELIO</option>
-                <option value="MARIA CAROLINA">MARIA CAROLINA</option>
-                <option value="RUDIMAR">RUDIMAR</option>
-                <option value="VITOR">VITOR</option>
-                <option value="DANIEL">DANIEL</option>
-            </select>
         </section>
-
-        <!-- Quem acompanhou a vistoria  -->
-        <section class="form-group">
-            <h3 class="text-dark text-center">Vistoria acompanhada por:</h3>
-            <div class="form-group">
-                <select class="form-control">
+        <section>
+            
+            <div class="d-flex justify-content-center">
+                <h3 class="text-dark text-center mt-2">Realizou a Vistoria: </h3>
+                <select class="custom-select w-25">
+                    <option value="default" selected>Selecione uma opção</option>
+                    <option value="AUGUSTO">AUGUSTO</option>
+                    <option value="BRUNO">BRUNO</option>
+                    <option value="DIEGO">DIEGO</option>
+                    <option value="HELIO">HELIO</option>
+                    <option value="MARIA CAROLINA">MARIA CAROLINA</option>
+                    <option value="RUDIMAR">RUDIMAR</option>
+                    <option value="VITOR">VITOR</option>
+                    <option value="DANIEL">DANIEL</option>
+                </select>
+            </div></section>
+             <!-- Quem acompanhou a vistoria  -->
+            <div class="d-flex justify-content-center mt-1">
+                <h3 class="text-dark text-center">Responsável pelo local:</h3>
+                <select class="custom-select w-25">
                     <optgroup>
-                        <option value="default"></option>
+                        <option value="default" selected>Selecione uma opção</option>
                         <option value="PROPRIETÁRIO">PROPRIETÁRIO</option>
                         <option value="ENGENHEIRO">ENGENHEIRO</option>
                         <option value="ARQUITETO">ARQUITETO</option>
@@ -72,18 +73,15 @@
                         <option value="OUTROS">OUTROS</option>
                     </optgroup>
                 </select>
-            </div>
-            <div class="form-group">
-                <p class="text-center mb-3">Nome:</p>
-                <input type="text" class="form-control">
+                <p class="text-center ml-2">Nome:</p>
+                <input type="text" class="w-30 mb-1">
             </div>
         </section>
-        <div class="d-flex justify-content-center">
             <!-- Tipo de economia -->
-            <section class="form-group">
-                <h3 class="mb-3">Tipo de economia:</h3>
-                <select class="form-control">
-                    <option value="default"></option>
+            <section class="d-flex justify-content-center">
+                <h3 class="text-center mt-1">Tipo de economia:</h3>
+                <select class="custom-select w-25">
+                    <option value="default" selected>Selecione uma opção</option>
                     <option value="RESIDENCIA">RESIDÊNCIA</option>
                     <option value="COMERCIO">COMÉRCIO</option>
                     <option value="PUBLICA">PÚBLICA</option>
@@ -91,14 +89,13 @@
                     <option value="OUTRO">OUTRO</option>
                 </select>
             </section>
-        </div>
         <!-- Rede de Agua -->
         <section>
             <form>
                 <h3 class="text-center mb-3">Posição da rede de Água: ( DE ACORDO COM O CADASTRO)</h3>
-                <div class="form-group">
-                    <select class="form-control">
-                        <option value="default"></option>
+                <div class="d-flex justify-content-center">
+                    <select class="custom-select mb-3 w-75">
+                        <option value="default" selected>Selecione uma opção</option>
                         <option value="PASSEIO">PASSEIO</option>
                         <option value="RUA">RUA</option>
                         <option value="SEMREDE">SEM REDE</option>
@@ -107,75 +104,92 @@
                 </div>
                 <h3 class="text-center mb-3">Possui ramal de Água? ( DE ACORDO COM O CADASTRO)</h3>
                 <div class="form-group">
-                    <select class="form-control">
-                        <option value="default"></option>
-                        <option value="Sim, LADO DIREITO.">Sim, LADO DIREITO.</option>
-                        <option value="Sim, LADO ESQUERDO.">Sim, LADO ESQUERDO.</option>
-                        <option value="O ramal está no meio do lote.">O ramal está no meio do lote.
-                        </option>
-                        <option value="Não fez pesquisa.">Não fez pesquisa.</option>
-                        <option value="Não fez pesquisa.">Não encontrado</option>
-                        <option value="Não fez pesquisa.">sim,LADO ESQUERDO, Mas estava do lado oposto
-                        </option>
-                        <option value="Não fez pesquisa.">Sim, LADO DIREITO, Mas estava do lado oposto.
-                        </option>
-                        <option value="Não fez pesquisa.">Não vai utilizar ramal existente no cadastro,vai assinar termo
-                            de ramal adicional.</option>
-                        <option value="Não tem ramal.">Não tem ramal.</option>
-                    </select>
+                    <div class="d-flex justify-content-center">
+                        <select class="custom-select mb-3 w-75">
+                            <option value="default" selected>Selecione uma opção</option>
+                            <option value="Sim, LADO DIREITO.">Sim, LADO DIREITO.</option>
+                            <option value="Sim, LADO ESQUERDO.">Sim, LADO ESQUERDO.</option>
+                            <option value="O ramal está no meio do lote.">O ramal está no meio do lote.
+                            </option>
+                            <option value="Não fez pesquisa.">Não fez pesquisa.</option>
+                            <option value="Não fez pesquisa.">Não encontrado</option>
+                            <option value="Não fez pesquisa.">sim,LADO ESQUERDO, Mas estava do lado oposto
+                            </option>
+                            <option value="Não fez pesquisa.">Sim, LADO DIREITO, Mas estava do lado oposto.
+                            </option>
+                            <option value="Não fez pesquisa.">Não vai utilizar ramal existente no cadastro,vai assinar
+                                termo
+                                de ramal adicional.</option>
+                            <option value="Não tem ramal.">Não tem ramal.</option>
+                        </select>
+                    </div>
                 </div>
                 <h3 class="text-center mb-3">O Cavalete está de acordo com o padrão I do site do DAE?</h3>
                 <div class="form-group">
-                    <select class="form-control">
-                        <option value="default"></option>
-                        <option value="Sim, LADO DIREITO.">Água ligada.</option>
-                        <option value="Sim, LADO ESQUERDO.">Sim. O cavalete esta liberado para a ligação
-                            de água.</option>
-                        <option value="Não tem ramal.">Trata-se de uma religação conforme boleta
-                            existente.
-                    </select>
+                    <div class="d-flex justify-content-center">
+                        <select class="custom-select mb-3 w-75">
+                            <option value="default" selected>Selecione uma opção</option>
+                            <option value="Sim, LADO DIREITO.">Água ligada.</option>
+                            <option value="Sim, LADO ESQUERDO.">Sim. O cavalete esta liberado para a ligação
+                                de água.</option>
+                            <option value="Não tem ramal.">Trata-se de uma religação conforme boleta
+                                existente.
+                        </select>
+                    </div>
                 </div>
             </form>
+            </div>
+
         </section>
         <!-- Esgoto -->
         <section class="container">
             <form>
                 <h3 class="text-center mb-3">Posição da rede de Esgoto: (DE ACORDO COM O CADASTRO)</h3>
-                <select class="custom-select mb-3">
-                    <option value="default" selected>Selecione uma opção</option>
-                    <option value="default">SEM REDE</option>
-                    <option value="PASSEIO">PASSEIO</option>
-                    <option value="RUA">RUA</option>
-                    <option value="OUTRO">OUTRO</option>
-                </select>
+                <div class="d-flex justify-content-center">
+                    <select class="custom-select mb-3 w-75">
+                        <option value="default" selected>Selecione uma opção</option>
+                        <option value="default">SEM REDE</option>
+                        <option value="PASSEIO">PASSEIO</option>
+                        <option value="RUA">RUA</option>
+                        <option value="OUTRO">OUTRO</option>
+                    </select>
+                </div>
                 <h3 class="text-center mb-3">Possui ramal de Esgoto: (DE ACORDO COM O CADASTRO)</h3>
-                <select class="custom-select mb-3">
-                    <option value="default" selected>Selecione uma opção</option>
-                    <option value="Sim, LADO DIREITO.">Sim, LADO DIREITO.</option>
-                    <option value="Sim, LADO ESQUERDO.">Sim, LADO ESQUERDO.</option>
-                    <option value="O ramal está no meio do lote.">O ramal está no meio do lote.</option>
-                    <option value="Não encontrado">Não encontrado</option>
-                    <option value="sim,LADO ESQUERDO, Mas estava do lado oposto">sim,LADO ESQUERDO, Mas estava do lado
-                        oposto</option>
-                    <option value="Sim, LADO DIREITO, Mas estava do lado oposto.">Sim, LADO DIREITO, Mas estava do lado
-                        oposto.</option>
-                    <option value="Não vai utilizar ramal existente no cadastro, vai assinar termo de ramal adicional.">
-                        Não vai utilizar ramal existente no cadastro, vai assinar termo de ramal adicional.</option>
-                    <option value="Não tem ramal.">Não tem ramal.</option>
-                </select>
-                <h3 class="text-center mb-3">A CAIXA está de acordo com o padrão no site do DAE? *</h3>
-                <select class="form-control">
-                    <optgroup>
-                        <option value="default"></option>
-                        <option value="Vai utilizar fossa">Vai utilizar fossa</option>
-                        <option value="Esgoto Ligado">Esgoto ligado.</option>
-                        <option value="Esgoto Ligado em conjunto.">Esgoto Ligado em conjunto.</option>
-                        <option value="Sim. A CAIXA esta liberada para a ligação de Esgoto.">Sim. A CAIXA esta liberada
-                            para a ligação de Esgoto.</option>
-                        <option value="Não interligou a caixa no ramal existente.">Não interligou a caixa no ramal
-                            existente.Vai assinar termo de Ramal Adicional.</option>
-                    </optgroup>
-                </select>
+                <div class="d-flex justify-content-center">
+                    <select class="custom-select mb-3 w-75">
+                        <option value="default" selected>Selecione uma opção</option>
+                        <option value="Sim, LADO DIREITO.">Sim, LADO DIREITO.</option>
+                        <option value="Sim, LADO ESQUERDO.">Sim, LADO ESQUERDO.</option>
+                        <option value="O ramal está no meio do lote.">O ramal está no meio do lote.</option>
+                        <option value="Não encontrado">Não encontrado</option>
+                        <option value="sim,LADO ESQUERDO, Mas estava do lado oposto">sim,LADO ESQUERDO, Mas estava do
+                            lado
+                            oposto</option>
+                        <option value="Sim, LADO DIREITO, Mas estava do lado oposto.">Sim, LADO DIREITO, Mas estava do
+                            lado
+                            oposto.</option>
+                        <option
+                            value="Não vai utilizar ramal existente no cadastro, vai assinar termo de ramal adicional.">
+                            Não vai utilizar ramal existente no cadastro, vai assinar termo de ramal adicional.</option>
+                        <option value="Não tem ramal.">Não tem ramal.</option>
+                    </select>
+                </div>
+                <h3 class="text-center mb-3">A Caixa está de acordo com o padrão no site do DAE? </h3>
+                <div class="d-flex justify-content-center">
+                    <select class="custom-select mb-3 w-75">
+                        <optgroup>
+                            <option value="default" selected>Selecione uma opção</option>
+                            <option value="Vai utilizar fossa">Vai utilizar fossa</option>
+                            <option value="Esgoto Ligado">Esgoto ligado.</option>
+                            <option value="Esgoto Ligado em conjunto.">Esgoto Ligado em conjunto.</option>
+                            <option value="Sim. A Caixa esta liberada para a ligação de Esgoto.">Sim. A Caixa esta
+                                liberada
+                                para a ligação de Esgoto.</option>
+                            <option value="Não interligou a Caixa no ramal existente.">Não interligou a Caixa no ramal
+                                existente.Vai assinar termo de Ramal Adicional.</option>
+                        </optgroup>
+                    </select>
+                    <div class="d-flex justify-content-center">
             </form>
         </section>
         <!-- Sobre o Local -->
@@ -186,7 +200,7 @@
                 <div class="d-flex justify-content-center">
                     <select class="text-center">
                         <optgroup>
-                            <option value="default"></option>
+                            <option value="default" selected>Selecione uma opção</option>
                             <option value="Rua asfaltada.">Rua asfaltada.</option>
                             <option value="Rua de terra.">Rua de terra.</option>
                             <option value="OUTRO">OUTRO</option>
@@ -196,7 +210,7 @@
 
                 <h3 class="text-center">Observações finais:</h3>
                 <div class="d-flex justify-content-center">
-                    <textarea class="form-control w-80"></textarea>
+                      <textarea class="w-75"></textarea>
             </form>
         </section>
         <div class="text-center">
